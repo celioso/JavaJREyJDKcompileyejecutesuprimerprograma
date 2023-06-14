@@ -19,3 +19,24 @@ for ejecuted the program used the command `java HolaMundo`, this translates in i
 
 for view the archive used the command `vim Hola Mundo.class`, It is not understood, for that we pass it to hexadecimal with the command
 in the vim `:%!xxd`.
+
+view the JDK used te command `javap -c HolaMundo`
+## lo que aprendimoslo que aprendimos
+
+En la clase introductoria ya hemos aprendido varios temas fundamentales sobre Java.
+
+Hablamos sobre las principales características de Java como:
+	 - Orientado a objetos.
+	 - Parecido a C++.
+	 - Muchas librerías y una gran comunidad.
+Además de eso, aprendimos:
+
+	- La diferencia entre código fuente y Bytecode.
+	- Para ejecutar el Bytecode necesitamos tener la máquina virtual de Java.
+	- El Bytecode es independiente del sistema operativo.
+Vimos también los principales componentes de la plataforma Java, que son:
+
+	- Java Virtual Machine (JVM).
+	- Lenguaje Java.
+	- Librerias Java (API).
+En la próxima clase vamos a escribir nuestro primer código en Java.
