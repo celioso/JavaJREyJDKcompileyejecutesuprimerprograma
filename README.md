@@ -139,3 +139,38 @@ La respuesta es simple: El JRE (Nuestro ambiente de ejecución) contiene la JVM,
 Entonces, podemos simplificar:
 `JRE = JVM + Librerías`
 Es importante resaltar que no se puede descargar la JVM individualmente. Siempre tendremos que descargar el JRE que tiene la JVM y el conjunto de librerías.
+
+#### Para saber más: ¿Cómo funcionan las versiones en Java?
+
+Java es un lenguaje de programación que se actualiza periódicamente por Oracle, la empresa responsable de su desarrollo. Cada nueva versión de Java trae consigo nuevas características, mejoras de rendimiento, correcciones de errores y actualizaciones de seguridad. Estas versiones se numeran, siguiendo un patrón específico.
+
+Cuando se lanza una nueva versión, puede incluir nuevas bibliotecas, clases, métodos y otros recursos que los desarrolladores pueden utilizar para crear aplicaciones Java más eficientes y con menos errores.
+
+Aquí hay algunos ejemplos de algunas de las principales versiones de Java y sus características:
+
+Java 8: Introdujo la programación funcional, incluyendo la interfaz java.util.function, que permite el uso de expresiones lambda. Además, se agregó una nueva API de fecha y hora que proporciona una forma más simple y segura de manejar fechas y horas.
+
+Java 11: Introdujo el sistema de módulos de Java, que ayuda a simplificar la creación y mantenimiento de aplicaciones complejas. Además, se agregó la clase HttpClient, que admite comunicaciones HTTP/2.
+
+Java 15: Agregó características como la palabra clave sealed, que permite que las clases restrinjan qué otras clases pueden extenderlas o implementarlas, y también agregó mejoras a la API Records, que ayuda a simplificar la creación de clases de datos inmutables.
+
+Java 17: introduce nuevas características y mejoras, como patrones de coincidencia que mejoran la sintaxis al trabajar con estructuras de datos complejas. Además, se mejoran el rendimiento del recolector de basura para reducir la latencia en las aplicaciones Java. También se agregan funcionalidades a los registros, que son clases inmutables y compactas utilizadas para representar datos, incluyendo la capacidad de definir registros locales dentro de métodos. Otra adición importante son las nuevas clases y métodos en el paquete java.util para trabajar con estructuras de datos persistentes, lo que permite realizar cambios en los datos sin modificar las estructuras originales. Por último, se agrega soporte para CGroups en la API de Java, lo que permite una mejor administración de recursos en entornos de contenedores.
+
+Al actualizar a una nueva versión de Java, es importante tener en cuenta la compatibilidad con versiones anteriores. A veces, se eliminan o modifican características o funcionalidades en una nueva versión, lo que puede afectar el código existente. Por esta razón, es importante probar su código al actualizar a una nueva versión de Java.
+
+Además, es posible que coexistan diferentes versiones de Java en un sistema, lo que permite que las aplicaciones se ejecuten en versiones específicas de la JVM (Java Virtual Machine) para garantizar la compatibilidad con el código existente.
+
+Visita nuestro artículo y conoce otras características de las diferentes versiones de Java.
+
+[https://www.aluracursos.com/blog/caracteristica-destacables-java8-delante](https://www.aluracursos.com/blog/caracteristica-destacables-java8-delante)
+### Lo que aprendimos
+En esta clase escribiste tu primer código Java y aprendimos:
+
+- Cuál es la diferencia entre JRE y JDK.
+- Cómo compilar el código fuente de Java desde la línea de comandos (`javac`).
+- Cómo ejecutar Bytecode en la línea de comando (`java`).
+- Un programa Java debe escribirse dentro de una clase (`class`).
+- Cada instrucción Java debe terminar con `;`.
+- Para abrir y cerrar un bloque usaremos las llaves `{}`.
+- Un programa Java tiene una entrada que es una función (método) `main`.
+- Para imprimir algo en la consola, usamos la declaración `System.out.println ()`.
