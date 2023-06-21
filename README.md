@@ -174,3 +174,162 @@ En esta clase escribiste tu primer código Java y aprendimos:
 - Para abrir y cerrar un bloque usaremos las llaves `{}`.
 - Un programa Java tiene una entrada que es una función (método) `main`.
 - Para imprimir algo en la consola, usamos la declaración `System.out.println ()`.
+### Instala el IDE de Eclipse
+
+Así como vimos en los videos, ahora descargaremos el IDE de Eclipse, para eso, sigue los pasos a continuación:
+
+Atención: Es importante destacar que para instalar la versión más reciente de Eclipse en este caso Eclipse 4.27 (2023-03) es necesario tener instalada la versión 17 de Java, si en tu caso tienes la versión 8 de Java te recomendamos instalar Eclipse 4.16 (2020-06) que puedes encontrarlo en este [link](http:/https://www.eclipse.org/downloads/packages// "link") y de esta manera evitar errores de compatibilidad.
+
+1. En primer lugar, ve al sitio web de [Eclipse](https://www.eclipse.org/ "Eclipse") y haz clic en el botón Download.
+
+![](https://caelum-online-public.s3.amazonaws.com/1736-java/Imagens+Eclipse/Eclipse-1.png)
+
+2. Cuando hacemos clic, el sitio nos redirige a otra página, haz clic en el botón Download debajo de Get Eclipse.
+
+3. El sitio nos llevará a la descarga de acuerdo con tu sistema operativo, así que ahora haz clic en Download y espera para finalizar.
+
+4. Desde aquí, procede a la instalación de acuerdo con tu sistema operativo.
+
+### Windows
+Para instalar el IDE de Eclipse en Windows, sigue estos pasos:
+
+4.1. Ejecuta el archivo que acabas de descargar y espera al instalador.
+
+![](https://caelum-online-public.s3.amazonaws.com/1736-java/Imagens+Eclipse/4.png)
+
+4.2. El instalador de Eclipse nos dará varias opciones, para este curso, debemos elegir la opción Eclipse IDE for Java Developers.
+
+![](https://caelum-online-public.s3.amazonaws.com/1736-java/Imagens+Eclipse/5.png)
+
+
+4.3. En esta nueva parte, haz clic en Install y espera. Cuando se complete la instalación, haz clic en el Launch para abrir Eclipse automáticamente.
+
+![](https://caelum-online-public.s3.amazonaws.com/1736-java/Imagens+Eclipse/6.png)
+
+### Linux
+Para instalar el IDE de Eclipse en Linux, sigue estos pasos:
+
+4.1. Extrae los archivos y ejecuta el archivo "eclipse-inst"
+
+4.2. El instalador de Eclipse nos dará varias opciones, para este curso, debemos elegir la opción Eclipse IDE for Java Developers.
+
+4.3. En esta nueva parte, haz clic en Install y espera. Cuando finalice la instalación, haz clic en el Launch para abrir Eclipse automáticamente.
+
+### Mac
+4.1. Extrae los archivos y ejecuta el instalador (eclipse).
+
+4.2. El instalador de Eclipse nos dará varias opciones, para este curso, debemos elegir la opción Eclipse IDE for Java Developers.
+
+4.3. En esta nueva parte, haz clic en Install y espera. Cuando finalice la instalación, haz clic en el Launch para abrir Eclipse automáticamente.
+
+### Ejecutar nuestro programa en Eclipse
+
+Ha llegado el momento de ejecutar nuestro código en Eclipse, sigue los pasos a continuación:
+
+1. Cuando iniciamos Eclipse, nos pedirá que seleccionemos un " workspace ", que es donde se almacenarán tus proyectos. Si deseas personalizar esto, haz clic en Examinar ... y selecciona tu carpeta. En este curso utilizaremos la carpeta del workspace en sí.
+
+2. Cierra la página de Welcome y comenzaremos Eclipse de la forma en que normalmente lo encontramos.
+
+3. Haz clic en File y coloca el cursor en la línea new y verás que Eclipse nos dará algunas opciones. Elige Java project.
+
+4.  En esta nueva ventana, nombraremos nuestro proyecto, elegiremos el nombre sintaxe-basica, recuerda verificar la versión de Java utilizada.
+
+5.  Observa que tenemos un nuevo proyecto en View Package Explorer, guardaremos nuestro proyecto en esta carpeta src que se creó.
+
+6.  En el directorio src, haz clic derecho, coloca el cursor en new y elige class.
+
+7.  En esta nueva ventana, crearemos la clase con el nombre Programa, no te preocupes por las diversas opciones que nos ofrezca Eclipse. Haz clic en finish y tendremos nuestra clase de programa.
+
+8. Antes de colocar System.out.println, escribe el método main. Ten la seguridad de que entenderemos mejor el método main durante el curso. Nuestro código se verá así:
+
+```java
+public class Programa {
+
+    public static void main(String[] args){
+        System.out.println("Hola mundo");
+    }
+
+}
+```
+
+9. Ten en cuenta que, durante la escritura, Eclipse intenta inferir algunas cosas, además de cerrar las comillas automáticamente.
+
+10. Para ejecutar nuestro código, en la parte superior de Eclipse, haz clic en Run, luego en Run As y elige Java Application.
+
+### utilizando el tipo double
+
+Practiquemos un poco el uso de la variable de tipo doble:
+
+1. Crea una clase "TestPuntoFlotante" y estructura tu método main.
+
+2. Declara una variable salario con el valor de 1250.70, de la siguiente manera:
+
+`double salario = 1250.70;`
+
+Si el salario fuera del tipo int, recibiríamos un error, ya que tenemos decimales.
+
+3. Imprime la variable de salario y verifica si el valor es correcto. Nuestro código debería verse así:
+```java
+    public class TestPuntoFlotante {
+    
+        public static void main(String[] args){
+    
+            double salario = 1250.70;
+    
+            System.out.println(salario);
+        }
+    
+    }
+```
+
+4. Usa el + para concatenar la variable de salario con un texto:
+
+`System.out.println ("mi salario es" + salario);`
+
+5. Recuerda que no podemos colocar un valor de tipo flotante dentro de una variable de tipo int, prueba:
+
+```java
+public class TestPuntoFlotante {
+
+    public static void main(String[] args){
+
+        double salario = 1250.70;
+
+        System.out.println(salario);
+
+        int valor = 12.5;             //no compila.
+
+        int valor2 = 0.0;             //no compila.
+
+        double test = 125.50;        // compila
+
+        int valor3 = test;           //no compila.
+
+    }
+
+}
+```
+
+Java está muy tipado, observa que incluso con el valor 0.0 nuestro código no se compilará, ¡así que ten cuidado con eso!
+
+6. Prueba también un cálculo de división:
+
+```java
+int division = 5/2;
+System.out.println (division);
+```
+
+Nuestra salida será la 2.
+
+Es importante tener en cuenta que cuando hacemos una división inexacta, pero estamos dividiendo números enteros, Java siempre truncará el resultado. En este ejemplo, la salida siempre será 2.
+
+Si la variable de división fuera de tipo double, tendríamos el mismo problema, la única diferencia sería que nuestra salida tendría un lugar decimal: 2.0
+
+7. Para resolver el problema, coloca uno de los valores de división con algún lugar decimal, además de cambiar el tipo de variable a doble:
+
+```java
+double division = 5.0 / 2;
+System.out.println (division);
+
+Ahora obtendremos el resultado esperado: 2.5
+```
