@@ -793,3 +793,235 @@ public class TestCondicional2 {
 
 Por lo tanto, nuestra variable booleana tendrá un valor de **true** cuando cantidadPersonas sea mayor o igual a 2, y tendrá un valor de falso cuando ocurra lo contrario.
 
+### alcance de las variables
+
+Continuando, ahora echemos un vistazo a los ámbitos:
+
+1. Crea una clase y estructura tu método principal, en el curso le dimos el nombre **"TestAlcance"**.
+
+2. Rompe tu declaración de variable booleana, usando un **if**, dejando el código así:
+
+```java
+public class TestAlcance {
+
+    public static void main (String [] args) {
+        System.out.println ("pruebas condicionales");
+
+        int edad = 20;
+        int cantidadPersonas = 3;
+        // acompañado boolean = true;
+
+        if (cantidadPersonas >= 2) {
+            boolean acompañado  = true;
+        } else {
+            boolean acompañado = false;
+        }
+
+        if (edad >= 18 || acompañado) {
+            System.out.println ("Bienvenido");
+        } else {
+            System.out.println ("desafortunadamente no puedes ingresar");
+        }
+    }
+}
+```
+
+Ten en cuenta que nuestro código deja de compilarse, ya que nuestra variable se crea dentro del** if**, cuando llegamos al final del **if**, deja de existir.
+
+3. Modifica tu código para que se compile, el código debería verse así:
+
+```java
+public class TestAlcance {
+
+    public static void main (String [] args) {
+        System.out.println ("pruebas condicionales");
+
+        int edad = 20;
+        int cantidadPersonas = 3;
+        boolean acompañado;
+
+        if (cantidadPersonas >= 2) {
+            acompañado = true;
+        } else {
+            acompañado = false;
+        }
+
+        if (edad >= 18 || acompañado) {
+            System.out.println ("Bienvenido");
+        } else {
+            System.out.println ("desafortunadamente no puedes ingresar");
+        }
+    }
+}
+```
+### el comando switch
+
+Vimos cómo hacer pruebas con `if`, pero ¿si necesitamos hacer varias pruebas? Un ejemplo, tenemos una variable `mes` que necesitamos probar su número e imprimir su mes correspondiente. Entonces, ¿vamos a hacer 12 `if` s?
+
+Una alternativa al if/else es el `switch`, de cambio, que es una estructura de control de flujo que permite ejecutar diferentes acciones basadas en el valor de una expresión. Es una forma más simplificada y legible de escribir varios bloques if/else encadenados.
+
+Funciona de la siguiente manera (sintaxe del switch):
+
+```java
+switch (variableASerProbada) {
+    case opción1:
+        comando (s) si se ha elegido la opción 1
+        break;
+    case option2:
+        comando (s) si se ha elegido la opción 2
+        break;
+    case option3:
+        comando (s) si se ha elegido la opción 3
+        break;
+    default:
+        comando (s) si ninguna de las opciones anteriores ha sido elegida
+}
+```
+El código que se ejecutará, que en nuestro caso será la impresión del nombre del mes, será el código donde se cumple la condición:
+
+```java
+public class TestMes {
+
+    public static void main (String [] args) {
+
+        int mes = 10;
+
+        switch (mes) {
+            case 1:
+                System.out.println ("El mes es enero");
+                break;
+            case 2:
+                System.out.println ("El mes es febrero");
+                break;
+            case 3:
+                System.out.println ("El mes es marzo");
+                break;
+            case 4:
+                System.out.println ("El mes es abril");
+                break;
+            case 5:
+                System.out.println ("El mes es mayo");
+                break;
+            case 6:
+                System.out.println ("El mes es junio");
+                break;
+            case 7:
+                System.out.println ("El mes es julio");
+                break;
+            case 8:
+                System.out.println ("El mes es agosto");
+                break;
+            case 9:
+                System.out.println ("El mes es septiembre");
+                break;
+            case 10:
+                System.out.println ("El mes es octubre");
+                break;
+            case 11:
+                System.out.println ("El mes es noviembre");
+                break;
+            case 12:
+                System.out.println ("El mes es diciembre");
+                break;
+            default:
+                System.out.println ("Mes inválido");
+                break;
+        }
+    }
+}
+```
+
+El `break` interrumpirá la ejecución del caso que lo contiene, de modo que los demás no se ejecutarán y, si no se aceptan condiciones, se ejecutará el código `default`. Por ejemplo:
+
+```java
+public class TestMes {
+
+    public static void main (String[] args) {
+
+        int mes = 13;
+
+        switch (mes) {
+            case 1:
+                System.out.println ("El mes es enero");
+                break;
+            case 2:
+                System.out.println ("El mes es febrero");
+                break;
+            case 3:
+                System.out.println ("El mes es marzo");
+                break;
+            case 4:
+                System.out.println ("El mes es abril");
+                break;
+            case 5:
+                System.out.println ("El mes es mayo");
+                break;
+            case 6:
+                System.out.println ("El mes es junio");
+                break;
+            case 7:
+                System.out.println ("El mes es julio");
+                break;
+            case 8:
+                System.out.println ("El mes es agosto");
+                break;
+            case 9:
+                System.out.println ("El mes es septiembre");
+                break;
+            case 10:
+                System.out.println ("El mes es octubre");
+                break;
+            case 11:
+                System.out.println ("El mes es noviembre");
+                break;
+            case 12:
+                System.out.println ("El mes es diciembre");
+                break;
+            default:
+                System.out.println ("Mes inválido");
+                break;
+        }
+    }
+}
+```
+
+La impresión será Mes inválido. Entonces, el `switch` es una solución para los `if`s encadenados.
+
+Ventajas del switch case:
+
+En resumen, el switch case hace que el código sea más fácil de entender y más legible en comparación con el if/else, especialmente cuando hay múltiples condiciones posibles.
+
+En esta clase, aprendimos:
+
+- Cómo usar el `if`.
+- Cómo usar las operaciones lógicas AND (`&&`) y OR (`||`).
+- Trabajar con el alcance de las variables.
+También hemos visto algunos atajos en Eclipse:
+
+- `main Ctrl + espacio`, para generar el método main.
+- `ctrl + shift + f`, para formatear el código fuente.
+- `sysout + ctrl + espacio`, para generar la instrucción `System.out.println ()`.
+
+### Mientras tanto, el while...
+
+Fernando decidió practicar su conocimiento de la estructura de repetición. Escribió el siguiente programa:
+```java
+package proyecto;
+
+public class Programa {
+
+    public static void main (String[] args) {
+
+        int contador = 1;
+
+        while (contador <= 10) {
+            System.out.println (contador);
+        }
+    }
+}
+```
+
+Sin embargo, su programa solo imprime en la consola 1 infinitamente.
+
+¿Puedes ver el problema en el código de Fernando? Después de formarte una opinión, compara tu hallazgo con la respuesta del instructor de inmediato.
+
