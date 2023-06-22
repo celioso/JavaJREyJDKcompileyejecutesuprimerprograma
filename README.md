@@ -333,3 +333,385 @@ System.out.println (division);
 
 Ahora obtendremos el resultado esperado: 2.5
 ```
+### algunas conversiones en Java
+
+Ahora practiquemos algunas conversiones en Java, para eso, sigue los pasos a continuación:
+
+1. Crea una clase y escribe tu método principal, en el curso elegimos el nombre "TestConversion".
+
+2. Escribe el siguiente código:
+
+```java
+public class TestConversion {
+
+    public static void main(String[] args){
+        double salario = 1270.50;
+        int valor = salario;
+    }
+
+}
+```
+
+Este código no se compila, ya que estamos tratando de asignar una variable double dentro de una variable int, que no es posible en el lenguaje Java.
+
+Sin embargo, recuerda que lo inverso es válido, es decir, podemos asignar un valor de tipo int dentro de una variable de tipo double.
+
+3) Hay una manera de compilar este código. Para eso usaremos lo que llamamos casting, entonces, modifica tu código y agrega (`int`) antes de la variable de `salario`:
+
+```java
+public class TestConversion {
+
+    public static void main(String[] args){
+        double salario = 1270.50;
+        int valor = (int) salario;
+    }
+}
+```
+
+Cuando hacemos el casting, le pedimos a Java que encuentre una manera de transformar el valor en el lado derecho de (int), en nuestro caso, la variable de salario, en su totalidad. De esa manera, Java transformará el double en int.
+
+4. " Imprime " la variable de valor en la consola, para esto, agrega:
+
+`System.out.println (valor);`
+
+La salida será 1270.
+
+Básicamente, para las variables primitivas, el casting no es más que hacer que esta conversión se realice cuando no se realiza automáticamente.
+
+5) Por el momento, nuestra variable salario es del tipo double, ¿es esta la mejor opción? Prueba lo siguiente:
+
+Escribe 3 variables de tipo double como se hace a continuación, la última variable (total) recibirá la suma de las otras dos, ten en cuenta:
+
+```java
+public class TestConversion {
+
+    public static void main(String[] args){
+
+        double salario = 1270.50;
+        int valor = (int) salario;
+        System.out.println(valor);
+
+        double valor1 = 0.2;
+        double valor2 = 0.1;
+        double total = valor1 + valor2;
+
+        System.out.println(total);
+    }
+}
+```
+
+Imaginamos que nuestra salida sería 0.3, pero obtenemos un número completamente diferente.
+
+Debido a esta inconsistencia, el double no sería la mejor opción para guardar salarios. Hay otras mejores alternativas que veremos en otros cursos.
+
+6. También probaremos el tipo float, para esto escribe la variable puntoflotante tipo float:
+
+```java
+public class TestConversion {
+
+    public static void main(String[] args){
+
+        float puntoFlotante = 3.14;   // aqui!
+
+        double salario = 1270.50;
+        int valor = (int) salario;
+        System.out.println(valor);
+
+        double valor1 = 0.2;
+        double valor2 = 0.1;
+        double total = valor1 + valor2;
+
+        System.out.println(total);
+    }
+}
+```
+
+Por lo tanto, tendremos un error, ya que, para Java, 3.14 es un double. Este es el mismo problema que tuvimos al intentar almacenar un double dentro de un int. En el tipo double podemos almacenar 64 bits, en el float y en el int solo 32 bits. Esto puede provocar la pérdida de información, para que este código funcione, podemos hacer el casting, colocar (float) delante de 3.14, pero lo haremos de otra manera.
+
+7. Dile a Java que el valor 3.14 es float, por lo tanto, pon f al final del número, nuestro código se verá así:
+
+```java
+public class TestConversion {
+
+    public static void main(String[] args){
+
+        float puntoFlotante = 3.14f;
+
+        double salario = 1270.50;
+        int valor = (int) salario;
+        System.out.println(valor);
+
+        double valor1 = 0.2;
+        double valor2 = 0.1;
+        double total = valor1 + valor2;
+
+        System.out.println(total);
+    }
+}
+```
+
+### Type Casting
+
+Como se ve en los videos, cuando intentamos poner un valor entero en una variable de tipo double, Java no muestra un error. Sin embargo, cuando intentamos poner un doble en una variable del tipo entero, tenemos un error de compilación.
+
+Esta propiedad se produce porque Java convierte implícitamente de un tipo más pequeño a tipos "más grandes". De entero a double, por ejemplo.
+
+Lo contrario no es cierto porque hay pérdida de datos cuando se realiza la conversión. Resultando en un " type mismatch" que muestra que esta instrucción es de tipos incompatibles.
+
+Para realizar una conversión donde puede haber pérdida de información, es necesario hacer un type casting. Vea las instrucciones a continuación.
+
+`int edad = (int) 30.0;`
+
+En el caso anterior, es explícito que se realizará la conversión de doublé a entero. Vea cómo funciona el cast implícito y explícito en la tabla a continuación.
+
+![cast implicito](https://cdn1.gnarususercontent.com.br/6/499608/71e5f633-2a96-4fa1-924d-15e6e86ab956.png "cast implisita")
+
+Para comparar cada tipo primitivo más claramente, la siguiente tabla muestra el tamaño de cada uno.
+
+![Tamaño dos tipos](https://www.alura.com.br/apostila-java-orientacao-objetos/assets/images/variaveis-primitivas-controle-fluxo/tamanho_tipos.png "Tamaño dos tipos")
+
+### practicando char y String
+Esta vez, practicaremos un poco el uso de los tipos **char** y **String**.
+
+1. Crea una clase y estructura de tu método main, en la clase usamos el nombre **"TestCaracteres"**
+
+2. Crea una variable de tipo **char**, como hicimos a continuación:
+
+```java
+public class TestCaracteres {
+
+    public static void main(String[] args) {
+        char letra = 'a';
+    }
+}
+```
+
+3. Imprime la variable en la consola:
+
+```java
+public class TestCaracteres {
+
+    public static void main(String[] args) {
+
+        char letra = 'a';
+        System.out.println(letra);
+    }
+}
+```
+
+Nuestra salida será: a
+
+4. Como se menciona en el video, el tipo char contiene solo un carácter de la tabla Unicode, por eso, cuando pasamos un valor numérico, mostramos el carácter correspondiente al número en la tabla Unicode. Escribe el siguiente código y observa:
+
+```java
+public class TestCaracteres {
+
+    public static void main(String[] args) {
+
+        char letra = 'a';
+        System.out.println(letra);
+
+        char valor = 65;  // Compila!
+        System.out.println(valor);
+    }
+}
+```
+El resultado de nuestro segundo System.out.println será: **A**
+
+5. Para una segunda prueba, escribe lo siguiente:
+
+```java
+public class TestCaracteres {
+
+    public static void main(String[] args) {
+
+        char letra = 'a';
+        System.out.println(letra);
+
+        char valor = 65;           // Compila!
+        System.out.println(valor);
+
+        valor = valor + 1;         // No compila!
+        System.out.println(valor);
+    }
+}
+```
+
+Nuestro código no compila, cuando escribimos esta suma, Java transforma automáticamente el resultado al tipo más grande, que en este caso es **int**, ya que el número 1 es un número entero.
+
+6. Haz un casting para que este código se compile, para eso debemos escribir:
+
+```java
+public class TestCaracteres {
+
+    public static void main(String[] args) {
+
+        char letra = 'a';
+        System.out.println(letra);
+
+        char valor = 65;                // Compila!
+        System.out.println(valor);
+
+        valor = (char) (valor + 1);     // Compila!
+        System.out.println(valor);
+    }
+}
+```
+
+Ten en cuenta que envolvemos la suma con paréntesis, por lo que le decimos a Java que queremos convertir el resultado de esa suma en **char**.
+
+7. Ahora crea una variable de tipo String, observa que este tipo es diferente de los que habíamos usado hasta ahora, además, escribimos con la letra mayúscula inicial.
+
+```java
+public class TestCaracteres {
+
+    public static void main(String[] args) {
+
+        char letra = 'a';
+        System.out.println(letra);
+
+        char valor = 65;                    // Compila!
+        System.out.println(valor);
+
+        valor = (char) (valor + 1);         // Compila!
+        System.out.println(valor);
+
+        String palabra = "Alura cursos online de tecnología";
+    }
+}
+```
+Para **String**, debemos usar comillas dobles.
+
+8. Imprime el **String** en la consola. Nuestro código se verá así:
+
+```java
+public class TestCaracteres {
+
+    public static void main(String[] args) {
+
+        char letra = 'a';
+        System.out.println(letra);
+
+        char valor = 65;                    // Compila!
+        System.out.println(valor);
+
+        valor = (char) (valor + 1);         
+        System.out.println(valor);
+
+        String palabra = "Alura  cursos online de tecnología";
+        System.out.println(palabra);
+    }
+}
+```
+
+9. Concatena el **String** con el número **2020** de la siguiente manera:
+
+```java
+public class TestCaracteres {
+
+    public static void main(String[] args) {
+
+        char letra = 'a';
+        System.out.println(letra);
+
+        char valor = 65;                    // Compila!
+        System.out.println(valor);
+
+        valor = (char) (valor + 1);         // Compila!
+        System.out.println(valor);
+
+        String palabra = "Alura cursos online de tecnología";
+        System.out.println(palabra);
+
+        palabra = palabra + 2020;
+        System.out.println(palabra);
+    }
+}
+```
+
+Ten en cuenta que el número 2020 aparece al final de la oración, esto se debe a que Java convierte automáticamente el número a **String**, de manera diferente a lo que sucedió con los tipos primitivos que vimos anteriormente.
+
+### el condicional if
+
+Ha llegado el momento de practicar nuestro condicional if:
+
+1. Crea una clase y configura tu método main (usa el atajo Ctrl + Espacio). En esta clase elegimos el nombre **"TestCondicional"**.
+
+2) Escribe **"Sysout"** y usa el atajo "Ctrl + Espacio", observa que Eclipse escribe `System.out.println (x);` automáticamente. Nuestro código es actualmente:
+
+```java
+public class TestCondicional {
+
+    public static void main(String[] args) {
+        System.out.println("probando condicionales");
+    }
+}
+```
+
+3. Crea la variable edad, de tipo entero e inicialízala con el valor 20:
+
+```java
+public class TestCondicional {
+
+    public static void main (String [] args) {
+        System.out.println("probando condicionales");
+        int edad = 20;
+    }
+}
+```
+
+4. Escribe un código que pruebe si la variable edad es mayor o igual que 18, si es verdadero, mostraremos un mensaje, si es falso, mostraremos otro mensaje. Nuestro código debería verse así:
+
+```java
+public class TestCondicional {
+
+    public static void main(String[] args) {
+        System.out.println("probando condicionales");
+
+        int edad = 20;
+
+        if (edad >= 18) {
+            System.out.println("Tienes más de 18 años");
+            System.out.println("Bienvenido");
+        } else {
+            System.out.println("Lamentablemente no puedes ingresar");
+        }
+    }
+}
+```
+
+5. Crea una variable *cantidadPersonas* con el valor 3.
+
+6. Agrega un **if** más después del else en el código para probar si esa persona está acompañada o no, de esta manera:
+
+```java
+public class TestCondicional {
+
+    public static void main(String[] args) {
+
+        System.out.println("probando condicionales");
+
+        int edad = 20;
+        int cantidadPersonas = 3;
+
+        if (edad >= 18) {
+            System.out.println("Tienes más de 18 años");
+            System.out.println("Bienvenido ");
+        } else {
+            if (cantidadPersonas >= 2) {
+                System.out.println("No tienes 18 años, pero puedes ingresar, porque estás acompañado");
+            } else {
+                System.out.println("Lamentablemente no puedes ingresar");
+            }
+        }
+
+    }
+}
+```
+
+Si lo deseas, rompe la línea de `System.out.println ()` para facilitar la lectura, dejándola así:
+
+```java
+System.out.println ("no tienes 18 años, pero puedes ingresar" 
+    + "porque estás acompañado");
+```
