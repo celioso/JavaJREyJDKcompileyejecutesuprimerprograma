@@ -1025,3 +1025,79 @@ Sin embargo, su programa solo imprime en la consola 1 infinitamente.
 
 ¿Puedes ver el problema en el código de Fernando? Después de formarte una opinión, compara tu hallazgo con la respuesta del instructor de inmediato.
 
+### bucles más profundos
+
+Ahora, vamos a profundizar un poco más.
+
+1. Crea una clase y tu método principal, elegimos el nombre "TestBucles".
+
+2. Escribe un for encadenado que imprima la tabla de multiplicar para cada número, nuestro código se verá así:
+
+```java
+public class TestBucles {
+
+    public static void main(String[] args) {
+        for (int multiplicador = 1; multiplicador <= 10; multiplicador++) {
+            for(int contador = 0; contador <= 10; contador++) {
+                System.out.print(multiplicador * contador);
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+Ten en cuenta que usamos `System.out.println ();` para organizar mejor la impresión.
+
+3. Creemos otra clase e implementemos el método principal, en el curso elegimos el nombre "TestBucles2".
+
+4. Practiquemos el comando break imprimiendo una matriz triangular, este es nuestro código:
+
+ ```java
+public class TestBucles2 {
+
+    public static void main(String[] args) {
+
+        for (int fila = 0; fila < 10; fila++) {
+            for(int columna = 0; columna < 10; columna++) {
+                if (columna > fila) {
+                    break;
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+Ten en cuenta que break interrumpe la ejecución del bucle, lo que hace que salte al bucle más externo.
+
+5. Podemos mejorar nuestro código, para eso necesitamos hacer las modificaciones:
+
+```java
+public class TestBucles2 {
+
+    public static void main(String[] args) {
+        for (int fila = 0; fila < 10; fila++) {
+            for(int columna = 0; columna <= fila; columna++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+Eliminamos el `if` y cambiamos los criterios del for interno para:
+
+`columna <= fila // restantes del For`
+### Lo que aprendimos
+
+En este capítulo aprendimos:
+
+- La sintaxis de `while` y `for`.
+- El operador `+=`.
+- El operador `++`.
+- Bucles anidados.
+- La funcionalidad `Break`.
