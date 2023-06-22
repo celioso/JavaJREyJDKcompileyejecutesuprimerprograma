@@ -715,3 +715,81 @@ Si lo deseas, rompe la línea de `System.out.println ()` para facilitar la lectu
 System.out.println ("no tienes 18 años, pero puedes ingresar" 
     + "porque estás acompañado");
 ```
+
+### un poco más de if
+
+Continuaremos nuestra práctica con condicionales, para esto sigue los pasos a continuación:
+
+1. Crea una nueva clase, toma el código ensamblado en la clase anterior y pégalo. Elegimos el nombre **"TestCondicional2"**
+
+2. Modifica tu código usando || y elimina el segundo **if**, dejándolo así:
+
+```java
+public class TestCondicional2 {
+
+    public static void main(String[] args) {
+        System.out.println("probando condicionales");
+
+        int edad = 16;
+        int cantidadPersonas = 3;        
+
+        if (edad >=18 || cantidadPersonas >=2) {
+            System.out.println("Bienvenido"); 
+        } else {
+            System.out.println("Lamentablemente no puedes ingresar");
+        }
+    }
+}
+```
+
+3. Modifica tu código cambiando el || por &&. Por lo tanto, el comando dentro del if solo ocurrirá si la edad es mayor o igual a 18 y cantidadPersonas mayor o igual a 2.
+
+4. Crea la variable acompañado por el tipo boolean asignando un valor true:
+
+`boolean acompañado = true;`
+
+5. Usa esta variable en el **if**, recuerda que en Java, cuando usamos = estamos asignando, cuando usamos == estamos comparando.
+
+6. Al usar un booleano, no necesitamos comparar su valor en el if, solo deja el código así:
+
+```java
+public class TestCondicional2 {
+
+    public static void main(String[] args) {
+        System.out.println("probando condicionales");
+
+        int edad = 16;
+        boolean acompañado = true;
+
+        if (edad >=18 && acompañado) {
+            System.out.println("Bienvenido"); 
+        } else {
+            System.out.println("Lamentablemente no puedes ingresar");
+        }
+    }
+}
+```
+
+7. Condiciona el valor de la variable booleana `acompañado`, para esto haremos:
+
+```java
+public class TestCondicional2 {
+
+    public static void main(String[] args) {
+        System.out.println("probando condicionales ");
+
+        int edad = 16;
+        int cantidadPersonas = 3;
+        boolean acompañado = cantidadPersonas >= 2;
+
+        if (edad >=18 && acompañado) {
+            System.out.println("Bienvenido"); 
+        } else {
+            System.out.println("Lamentablemente no puedes ingresar");
+        }
+    }
+}
+```
+
+Por lo tanto, nuestra variable booleana tendrá un valor de **true** cuando cantidadPersonas sea mayor o igual a 2, y tendrá un valor de falso cuando ocurra lo contrario.
+
